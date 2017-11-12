@@ -51,7 +51,7 @@ public final class ThemeManager {
 
     public void setImageDrawable(ImageView imageView,String resName){
         String resId = String.format("%s%s", resName, theme.getResourceSubfix());
-        int id = context.getResources().getIdentifier(resId, "drawable", packageName);
+        int id = resources.getIdentifier(resId, "drawable", packageName);
         if (id != 0){
             imageView.setImageResource(id);
             themeImages.put(resName,new WeakReference<ImageView>(imageView));
@@ -62,7 +62,7 @@ public final class ThemeManager {
             ImageView imageView = themeImages.get(resName).get();
             if (imageView != null){
                 String resId = String.format("%s%s", resName, theme.getResourceSubfix());
-                int id = context.getResources().getIdentifier(resId, "drawable", packageName);
+                int id = resources.getIdentifier(resId, "drawable", packageName);
                 if (id != 0){
                     imageView.setImageResource(id);
                 }
