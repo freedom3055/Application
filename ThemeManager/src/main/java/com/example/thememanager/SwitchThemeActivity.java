@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.example.thememanager.theme.Theme;
 import com.example.thememanager.theme.ThemeManager;
 
-public class MainActivity extends Activity {
+public class SwitchThemeActivity extends Activity {
 
     private ImageView imageView;
     private CheckBox checkBox;
@@ -30,10 +30,10 @@ public class MainActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    ThemeManager.getInstance(MainActivity.this).setTheme(Theme.RED);
+                    ThemeManager.getInstance(SwitchThemeActivity.this).setTheme(Theme.RED);
                     checkBox.setText(Theme.RED.name());
                 }else {
-                    ThemeManager.getInstance(MainActivity.this).setTheme(Theme.DEFAULT);
+                    ThemeManager.getInstance(SwitchThemeActivity.this).setTheme(Theme.DEFAULT);
                     checkBox.setText(Theme.DEFAULT.name());
                 }
             }
